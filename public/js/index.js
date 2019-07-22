@@ -1,3 +1,7 @@
-document.querySelector('#updateprofile').addEventListener('click', event => {
-    event.preventDefault();
+document.querySelector('#updateprofile').addEventListener('submit', event => {
+    UpdateProfile();
 });
+
+UpdateProfile = () => {
+    event.preventDefault();
+};
