@@ -13,16 +13,17 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 <!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/animation.css')}}">
 </head>
-<body class="bg-dark">
+<body class="bg-white">
     <div id="app">
         @include('inc.nav')
-        <main class="py-4 text-white">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
@@ -34,5 +35,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
+
+<script src="{{asset('js/index.js')}}"></script>
 </body>
 </html>

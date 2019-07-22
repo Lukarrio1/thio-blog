@@ -1,0 +1,28 @@
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: rotate(xx) scale(1);
+    }
+}
+
+.scale {
+    animation: scale 0.2s forwards 0s ease-in;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(xx);
+        opacity: 1;
+    }
+}
+
+.fade {
+    animation: fade 0.2s forwards 0s ease-in;
+}

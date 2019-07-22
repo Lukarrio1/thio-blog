@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card bg-dark ">
-                <div class="card-header text-center text-white h3 ">{{ __('Reset Password') }}</div>
+        <div class="col-md-8 fade">
+            <div class="card">
+                <div class="card-header text-center text-white h3 blue lighten-2">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,7 +17,7 @@
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
 
-                        <div class="form-group row text-white">
+                        <div class="form-group row text-dark">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                              <div class="col-md-6">
