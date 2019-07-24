@@ -22,4 +22,7 @@ Route::get('/','PostsController@index');
 
 Route::prefix('profile')->group(function () {
 Route::get('/','Profile\ProfileController@edit')->name('profile.edit');
+Route::get('/user','Profile\ProfileController@User');
+Route::put('/update','Profile\ProfileController@update');
+Route::post('/picture','Profile\ProfileController@picture');
 });
