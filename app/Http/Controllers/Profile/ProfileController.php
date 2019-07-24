@@ -72,4 +72,12 @@ class ProfileController extends Controller
          }
        
     }
+
+    public function removePicture(){
+        $user = User::find(Auth::user()->id);
+        Storage::delete('public/profile/' . $user->image); 
+        $user->image ='noimage.jpg';
+        $user->save();
+        return new json(['status'=>200]);
+    }
 }

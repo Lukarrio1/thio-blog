@@ -81,8 +81,8 @@
             style="width:100%"
             id="profileimage"
         /></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="close h6 text-danger" data-dismiss="modal" aria-label="Close" id="removeimg">
+            <i class="fas fa-trash-alt"></i>
           </button>
         </div>
         <div class="modal-body">

@@ -25,4 +25,5 @@ Route::get('/','Profile\ProfileController@edit')->name('profile.edit');
 Route::get('/user','Profile\ProfileController@User');
 Route::put('/update','Profile\ProfileController@update');
 Route::post('/picture','Profile\ProfileController@picture');
+Route::delete('/remove','Profile\ProfileController@removePicture');
 });

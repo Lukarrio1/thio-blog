@@ -1,12 +1,13 @@
 $(document).ready(async () => {
     //Local variables
     let state = new State();
-    let profileController = new ProfileController();
+    let profile = new Profile();
 
     //Cache DOM
     let profileForm = document.querySelector('#updateprofile');
     let profilePic = document.querySelector('#profilepicform');
     let profileimgsubmit = document.querySelector('#ProfilePicForm');
+    let removeimg = document.querySelector('#removeimg');
 
     initialize();
 
@@ -24,29 +25,38 @@ $(document).ready(async () => {
             updated_at: user.updated_at,
             image: user.image
         };
-        await profileController.UpdateProfile(
-            profilemail,
-            profilename,
-            newuser
-        );
+        await profile.UpdateProfile(profilemail, profilename, newuser);
         state.setState('user', newuser);
     });
 
     profilePic.addEventListener('change', event => {
-        profileController.TemPic(event.target);
+        profile.TemPic(event.target);
         profileimgsubmit.addEventListener('click', () => {
-            profileController.ProfilePicUpdate(event.target.files[0]);
+            profile.ProfilePicUpdate(event.target.files[0]);
         });
     });
 
+    removeimg.addEventListener('click', async event => {
+        let user = state.getState('user');
+        let newuser = {
+            name: user.name,
+            email: user.email,
+            id: user.id,
+            created_at: user.created_at,
+            updated_at: user.updated_at,
+            image: 'noimage.jpg'
+        };
+        await profile.RemovePic('delete', newuser);
+        state.setState('user', newuser);
+    });
     //Methods
     async function initialize() {
         try {
-            let result = await profileController.ProfileData();
+            let result = await profile.ProfileData();
             state.setState('user', result);
-            profileController.Profile(result);
+            profile.Profile(result);
         } catch (e) {
-            console.log('error :', e);
+            IzT('error :', e);
         }
     }
 });

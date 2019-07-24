@@ -1,4 +1,4 @@
-class ProfileController extends env {
+class Profile extends env {
     ProfileData = async () => {
         try {
             let res = await axios.get('/profile/user');
@@ -18,7 +18,7 @@ class ProfileController extends env {
                 this.IzT('error', 'Email already in use.');
             } else {
                 this.Profile(user);
-                this.IzT('success', 'Profile Updated');
+                this.IzT('success', 'Profile Updated.');
             }
         } catch (err) {
             this.IzT('error', err);
@@ -54,6 +54,17 @@ class ProfileController extends env {
             fd.append('file', img, img.name);
             $('#closeprofilePicForm').click();
             let response = await axios.post('/profile/picture', fd);
+            this.IzT('success', 'Profile picture changed sucessfully.');
+        } catch (err) {
+            this.IzT('error', err);
+        }
+    };
+
+    RemovePic = async (req, user) => {
+        try {
+            await axios.delete('/profile/remove');
+            this.IzT('success', 'Profile picture removed .');
+            this.Profile(user);
         } catch (err) {
             this.IzT('error', err);
         }

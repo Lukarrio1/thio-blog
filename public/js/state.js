@@ -11,9 +11,4 @@ class State {
     clearState(key) {
         localStorage.removeItem(key);
     }
-
-    updateState(key, data) {
-        localStorage.removeItem(key);
-        this.setState(key, data);
-    }
 }
